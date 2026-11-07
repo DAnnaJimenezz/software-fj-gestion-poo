@@ -1,4 +1,4 @@
-"""Archivo: entidad.py
+"""Archivo: entidades.py
 Descripción:
 Define la clase abstracta Entidad, que funciona como una estructura
 base para las clases del sistema Software FJ.
