@@ -1,6 +1,5 @@
 """Archivo: entidades.py
-Descripción:
-Define la clase abstracta Entidad, que funciona como una estructura
+Descripción: Define la clase abstracta Entidad, que funciona como una estructura
 base para las clases del sistema Software FJ.
 Las clases que hereden de Entidad deberán implementar el método
 describir(), con el fin de proporcionar una representación propia
