@@ -120,7 +120,16 @@ class ReservaSala(Servicio):
             "INFO",
             f"Reserva de sala creada: {self.__nombre_sala}"
         )
+        
+    # Permite consultar la duración de la reserva.
+    @property
+    def duracion(self):
+        return self.__horas
 
+    # Indica la unidad de duración del servicio.
+    @property
+    def unidad_duracion(self):
+        return "horas"
 
     # Calcula el costo total de la reserva
     def calcular_costo(self, descuento=0, impuesto=0):
@@ -235,6 +244,16 @@ class AlquilerEquipo(Servicio):
             "INFO",
             f"Alquiler de equipo creado: {self.__nombre_equipo}"
         )
+        
+    # Permite consultar la duración del alquiler.
+    @property
+    def duracion(self):
+        return self.__dias
+
+    # Indica la unidad de duración del servicio.
+    @property
+    def unidad_duracion(self):
+        return "días"
 
     # Calcula el costo total del alquiler
     def calcular_costo(self, descuento=0, impuesto=0):
@@ -349,6 +368,16 @@ class Asesoria(Servicio):
             "INFO",
             f"Asesoría creada: {self.__especialidad}"
         )
+        
+    # Permite consultar la duración de la asesoría.
+    @property
+    def duracion(self):
+        return self.__horas
+
+    # Indica la unidad de duración del servicio.
+    @property
+    def unidad_duracion(self):
+        return "horas"
 
     # Calcula el costo total de la asesoría
     def calcular_costo(self, descuento=0, impuesto=0):
