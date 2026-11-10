@@ -18,6 +18,7 @@ from servicios import Servicio
 # Importamos las excepciones personalizadas.
 from excepciones import (
     DatosInvalidosError,
+    ServicioNoDisponibleError,
     ReservaInvalidaError,
     OperacionNoPermitidaError,
     CalculoInconsistenteError
@@ -57,7 +58,10 @@ class Reserva:
                 raise DatosInvalidosError(
                     "La reserva debe estar asociada a un servicio válido."
                 )
-
+                
+            # Validar los parámetros y la disponibilidad del servicio.
+            servicio.validar_parametros()
+            
             # Obtener la duración y su unidad desde el servicio.
             duracion = servicio.duracion
             unidad = servicio.unidad_duracion
@@ -100,7 +104,12 @@ class Reserva:
                 f"Error al crear la reserva: {error}"
             )
             raise
-
+        except ServicioNoDisponibleError as error:
+            registrar_evento(
+                "ERROR",
+                f"No se pudo crear la reserva: {error}"
+            )
+            raise
         except Exception as error:
             registrar_evento(
                 "ERROR",
@@ -284,7 +293,7 @@ class Reserva:
                 f"Error al calcular el costo de la reserva: {error}"
             )
             raise
-
+            
         except Exception as error:
             registrar_evento(
                 "ERROR",
