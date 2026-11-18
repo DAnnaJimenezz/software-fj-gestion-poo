@@ -1,13 +1,10 @@
 """ Archivo: simulacion.py
 Proyecto: Sistema Integral de Gestion - Software FJ
-
 Descripcion:
 Ejecuta diez operaciones de ejemplo sobre las clases del proyecto.
 Incluye escenarios correctos y escenarios que deben generar excepciones.
-
 Ejecucion:
     python simulacion.py
-
 Nota:
 Este modulo utiliza las clases y excepciones definidas en los demas
 archivos del proyecto Software FJ para ejecutar y demostrar diez
