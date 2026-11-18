@@ -44,8 +44,7 @@ def simulacion():
     # Operacion 1: registrar un cliente valido.
     def op1():
         datos["cliente"] = Cliente(
-            "C100", "Laura Gomez", "laura@gmail.com", "3001234567"
-        )
+            "C100", "Laura Gomez", "laura@gmail.com", "3001234567")
         return datos["cliente"].describir()
 
     ejecutar_operacion(1, "Registro de un cliente valido", op1)
@@ -64,8 +63,7 @@ def simulacion():
     # Operación 3: crear un servicio de reserva de sala.
     def op3():
         datos["sala"] = ReservaSala(
-            "S100", "Sala principal", "Sala para reuniones", "Sala A", 3
-        )
+            "S100", "Sala principal", "Sala para reuniones", "Sala A", 3)
         return datos["sala"].describir_servicio()
 
     ejecutar_operacion(3, "Creación de un servicio de reserva de sala", op3)
@@ -74,8 +72,7 @@ def simulacion():
     def op4():
         datos["equipo"] = AlquilerEquipo(
             "S101", "Alquiler de portatil", "Equipo para trabajo",
-            "Portatil", 2
-        )
+            "Portatil", 2)
         return datos["equipo"].describir_servicio()
 
     ejecutar_operacion(4, "Creacion de un servicio de alquiler de equipo", op4)
@@ -84,8 +81,7 @@ def simulacion():
     def op5():
         datos["asesoria"] = Asesoria(
             "S102", "Asesoria tecnologica", "Orientacion especializada",
-            "Desarrollo de software", 2
-        )
+            "Desarrollo de software", 2)
         return datos["asesoria"].describir_servicio()
 
     ejecutar_operacion(5, "Creacion de un servicio de asesoria", op5)
@@ -93,13 +89,11 @@ def simulacion():
     # Operacion 6: crear una reserva valida para el cliente.
     def op6():
         datos["reserva"] = Reserva(
-            "R100", datos["cliente"], datos["sala"]
-        )
+            "R100", datos["cliente"], datos["sala"])
         return (
             f"Reserva: {datos['reserva'].id_reserva}\n"
             f"Cliente: {datos['reserva'].cliente.nombre}\n"
-            f"Estado inicial: {datos['reserva'].estado}"
-        )
+            f"Estado inicial: {datos['reserva'].estado}")
 
     ejecutar_operacion(6, "Creacion de una reserva valida", op6)
 
@@ -128,8 +122,7 @@ def simulacion():
     def op10():
         servicio_no_disponible = ReservaSala(
             "S103", "Sala ocupada", "Sala temporalmente no disponible",
-            "Sala B", 2
-        )
+            "Sala B", 2)
         servicio_no_disponible.cambiar_disponibilidad(False)
 
         try:
@@ -139,8 +132,7 @@ def simulacion():
             return "El sistema impidio reservar un servicio no disponible."
 
         raise AssertionError(
-            "Se esperaba una excepcion por servicio no disponible."
-        )
+            "Se esperaba una excepcion por servicio no disponible.")
 
     ejecutar_operacion(10, "Intento de reserva de un servicio no disponible", op10)
 
